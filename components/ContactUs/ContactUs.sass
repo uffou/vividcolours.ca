@@ -1,0 +1,26 @@
+.ContactUs
+	text-align: center
+	+center-it
+	.description
+		white-space: pre-line
+		color: #000000
+		font-size: 14px
+	.box-items
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		.box
+			padding: 24px
+			width: 300px
+			+center-it
+			.title
+				font-weight: 500
+				font-size: 17px
+
+@media screen and (max-width: 589px)
+	.ContactUs
+		.t
+			flex-wrap: wrap
+		video
+			margin-left: 0
+			margin-top: 32px

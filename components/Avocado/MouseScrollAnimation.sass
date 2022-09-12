@@ -1,0 +1,75 @@
+@mixin ease-in-out($speed)
+    transition: all ease-in-out $speed;
+
+.mouse-container
+	position: absolute
+	width: 100%
+	bottom: 10px
+	padding: 8px !important;
+	.under-mouse-text
+		color: #eeeeee
+		position: relative
+		transition: opacity ease-in-out 0.3s
+
+
+.MouseScrollAnimation
+	position: relative
+	border: 0.2em solid #eee
+	border-radius: 1.5em
+	display: block
+	height: 3em
+	margin: 0px auto
+	width: 1.9em
+	transition: opacity ease-in-out 0.3s
+	&::before
+		content: ''
+		display: block
+		width: 0.2em
+		height: 0.2em
+		border-radius: 0.2em
+		background: #eee
+		opacity: 1
+		position: absolute
+		left: 0.65em
+		top: 0.4em
+		@include ease-in-out(0.2s)
+	&.hide-mouse
+		opacity: 0
+		&+.under-mouse-text
+			opacity: 0
+
+
+.scrolling
+  &::before
+    opacity: 1!important
+    height: 0.8em!important
+
+
+
+.doneScrolling
+  &::before
+    opacity: 0.5!important
+    height: 0.2em!important
+    top: 1.2em!important
+
+
+
+.preScrolling
+  &::before
+    opacity: 0!important
+    top: 1.2em!important
+
+
+
+.hideScrolling
+  &::before
+    opacity: 0!important
+    display: none!important
+    top: 0.4em!important
+
+
+
+.startScrolling
+  &::before
+    opacity: 1!important
+    top: 0.4em!important

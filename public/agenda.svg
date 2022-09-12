@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <title>agenda</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <g>
+      <rect x="6.52" y="7.78" width="20.96" height="20.45" rx="1.77" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5px"/>
+      <line x1="6.52" y1="14.01" x2="27.48" y2="14.01" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5px"/>
+      <line x1="10.94" y1="5.77" x2="10.94" y2="9.97" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5px"/>
+      <line x1="23.09" y1="5.77" x2="23.09" y2="9.97" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5px"/>
+      <path d="M24.1,24.12a1,1,0,0,1-1,.94H20.59a1,1,0,0,1-.95-.94h0V21.55a.94.94,0,0,1,.93-.94h2.58a1,1,0,0,1,1,.88v.06h0Z" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5px"/>
+    </g>
+  </g>
+</svg>

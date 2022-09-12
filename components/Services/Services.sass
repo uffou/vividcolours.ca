@@ -1,0 +1,27 @@
+.Services
+	background-image: url("./Services/img/painter.png")
+	background-size: 800px
+	background-repeat: no-repeat
+	background-position: 100% 50%
+	.description
+		white-space: pre-line
+		background: white
+		padding: 24px !important
+		border-radius: 12px
+		max-width: 500px
+		&.hidden
+			display: none
+		.cover
+			width: 450px
+			height: 300px
+			&.short
+				height: 280px
+
+@media screen and (max-width: 600px)
+	.Services
+		background-size: 250px
+		background-position: 135% 32%
+		.description
+			.cover
+				width: 340px
+				height: 250px

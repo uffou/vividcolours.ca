@@ -1,0 +1,57 @@
+.ImageShow
+	width: 100%
+	max-width: 900px
+	height: 700px
+	position: relative
+	text-align: left
+	margin: 0 auto
+	// pointer-events: none
+	padding-top: 57%
+	.Dots
+		position: absolute
+		bottom: 20px
+		left: 0
+		width: 100%
+		+v
+		+h
+		.dot
+			cursor: pointer
+			width: 8px
+			height: 8px
+			border-radius: 4px
+			margin: 4px
+			background: #8884E8;
+			opacity: 0.3
+			&.selected
+				opacity: 1
+	
+	.nextImage,.prevImage
+		+h
+		+v
+		color: #BFC7D4
+		position: absolute
+		top: 40%
+		background: white
+		border-radius: 30px
+		z-index: 2
+		+bigShadow
+		width: 60px
+		height: 60px
+		cursor: pointer
+		&:hover
+			color: #7286E9
+			box-shadow: 0 12px 20px 0 rgba(0, 0, 0, .07);
+	.nextImage
+		right: -5%
+	.prevImage
+		left: -5%
+	> img,object
+		opacity: 0
+		top: 0
+		left: 0
+		width: 100%
+		position: absolute
+		transition: opacity 500ms ease-in-out
+
+		&.__show
+			opacity: 1

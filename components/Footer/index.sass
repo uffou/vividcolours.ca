@@ -1,0 +1,91 @@
+footer
+	padding: 32px 0
+	background-color: #b398fd
+	color: white
+	text-align: center
+	a
+		color: #543a9c
+		text-decoration: underline
+
+	.logo
+		width: 34px
+
+	> ._lists
+		display: flex
+		max-width: 1200px
+
+		> ul
+			flex-grow: 1
+			list-style-type: none
+			min-width: 80px
+			padding: 0
+
+			&:first-child // Logo and social links
+				min-width: 0
+				width: 300px
+				padding-left: 60px
+
+			> li
+				&.title
+					color: white
+					font-weight: 400
+
+				> a
+					color: #495A61
+					text-decoration: none
+					cursor: pointer
+
+					&:hover
+						color: $lightGray
+
+@media screen and (max-width: 874px)
+	footer > ._lists > ul:first-child
+		width: 250px
+
+@media screen and (min-width: 520px) and (max-width: 774px)
+	footer > ._lists
+		height: 250px
+		flex-direction: column
+		flex-wrap: wrap
+
+		> ul:first-child
+			display: flex
+			flex-direction: column
+			justify-content: center
+
+			height: 100%
+			width: 250px
+
+		> ul
+			height: calc(50% - 10px)
+			flex-grow: 0
+
+@media screen and (max-width: 599px)
+	footer > ._lists > ul:first-child
+		width: 220px
+		padding-left: 30px
+
+@media screen and (max-width: 519px)
+	footer > ._lists
+		flex-direction: row
+		flex-wrap: wrap
+		padding-left: 10%
+
+		> ul:first-child
+			width: auto
+			text-align: center
+			padding-left: 0
+			height: 100px
+			flex-basis: 100%
+			margin-left: -10%
+			flex-shrink: 0
+
+			> .v
+				+h
+				padding-top: 8px
+
+		> ul
+			flex-basis: 50%
+
+		> ul:last-child
+			max-width: none

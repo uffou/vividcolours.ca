@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <title>fb</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <g>
+      <path d="M50,25A25,25,0,1,1,25,0,25,25,0,0,1,50,25Z" style="fill: #131313"/>
+      <path d="M21,41.45h6.42V25.38h4.47L32.34,20h-5V16.94c0-1.27.25-1.77,1.48-1.77h3.47V9.58H27.9c-4.78,0-6.93,2.11-6.93,6.13V20H17.63v5.45H21Z" style="fill: #fff"/>
+    </g>
+  </g>
+</svg>

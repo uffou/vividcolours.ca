@@ -5,6 +5,7 @@ import { getSiteMap } from 'lib/get-site-map'
 import { resolveNotionPage } from 'lib/resolve-notion-page'
 import { PageProps, Params } from 'lib/types'
 import { NotionPage } from 'components'
+import { NotionPageHeader } from 'components/NotionPageHeader'
 
 export const getStaticProps: GetStaticProps<PageProps, Params> = async (context) => {
   const rawPageId = context.params.pageId as string
@@ -47,5 +48,8 @@ export async function getStaticPaths() {
 }
 
 export default function NotionDomainDynamicPage(props) {
-  return <NotionPage {...props} />
+  return <>
+  <NotionPageHeader />
+  <NotionPage {...props} />
+  </>
 }
