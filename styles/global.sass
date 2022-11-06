@@ -1,37 +1,391 @@
 .home-bg
-    color: var(--fg-color)
+		color: var(--fg-color)
 
 *
-  box-sizing: border-box
-
+	box-sizing: border-box
 
 a
-  color: inherit
-  text-decoration: none
+	color: inherit
+	text-decoration: none
 
 
 body,
 html
-  padding: 0
-  margin: 0
+	padding: 0
+	margin: 0
 
 
 body
-  --notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans','Droid Sans', 'Helvetica Neue', 'Noto Sans', sans-serif
-  font-family: var(--notion-font)
-  overflow-x: hidden
-  background: var(--bg-color)
+	--notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans','Droid Sans', 'Helvetica Neue', 'Noto Sans', sans-serif
+	font-family: var(--notion-font)
+	overflow-x: hidden
+	background: var(--bg-color)
 
 
 .static-tweet blockquote
-  margin: 0
-  margin-block-start: 0
-  margin-block-end: 0
-  margin-inline-start: 0
-  margin-inline-end: 0
+	margin: 0
+	margin-block-start: 0
+	margin-block-end: 0
+	margin-inline-start: 0
+	margin-inline-end: 0
 
 
 .static-tweet-emoji
-  height: 1.2em !important
-  width: 1.2em !important
+	height: 1.2em !important
+	width: 1.2em !important
 
+
+	@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900")
+
+*, :after, :before
+	box-sizing: border-box
+
+body, html
+	height: 100%
+
+img
+	vertical-align: middle
+	border: 0
+
+body
+	padding: 0
+	margin: 0
+	font-size: 14px
+	line-height: 1.42857143
+	font-family: 'Roboto', 'Helvetica Neue', Arial
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+h1, h2, h3
+	margin-top: 20px
+	margin-bottom: 10px
+
+h4, h5, h6
+	margin-top: 10px
+	margin-bottom: 10px
+
+h1, h2, h3, h4, h5, h6
+	font-weight: 500
+	line-height: 1.1
+
+p
+	color: #6b7c93
+	margin: 0
+	font-size: 15px
+	font-weight: 300
+	max-width: 760px
+
+b
+	font-weight: 700
+
+hr
+	margin-top: 20px
+	margin-bottom: 20px
+	border: 0
+	height: 0
+	width: 100%
+	box-sizing: content-box
+	border-top: 1px solid #eee
+
+div > svg
+	display: block
+
+// button
+// 	background-color: transparent
+// 	border: 0 none
+// 	padding: 0
+// 	outline: none
+
+a
+	> i
+		color: black
+
+#app
+	display: flex
+	flex-direction: column
+	min-height: 100%
+	overflow-x: hidden
+
+@import "./framework"
+@import "./colors"
+@import "../components/EstimateForm/EstimateForm.sass"
+
+a
+	color: $blue
+	text-decoration: none
+
+h1
+	color: $roseDust
+	font-size: 36px
+
+	.light
+		font-weight: 300
+
+h2
+	color: #464958
+	font-size: 23px
+	margin-bottom: 12px
+	font-weight: 400
+
+h4
+	color: $darkMediumGray
+	font-size: 16px
+
+ul
+	margin-top: 0
+	margin-bottom: $unit
+
+h1.smaller
+	font-size: 40px
+
+h1.bigger
+	font-size: 52px
+
+=blueShadow
+	box-shadow: 0 4px 12px rgba(10, 67, 141,0.12), 0 3px 5px rgba(10, 67, 141,0.08)
+
+=blueShadowLarge
+	box-shadow: 0 60px 60px -20px rgba(25,45,100,.15)
+	// box-shadow: 0 7px 26px 1px rgba(25, 57, 145, 0.05), 0 11px 38px rgba(17, 70, 138, 0.08)
+
+.bigImage
+	max-width: 100%
+	display: block
+
+.centered
+	text-align: center
+
+.round-input
+	position: relative
+	input
+		border-radius: 24px !important
+		padding: 0 20px
+		border: none
+		height: 40px
+		font-size: 14px
+		&:focus
+			outline: none
+
+.round-input .svg-input-button
+	position: absolute
+	right: 13px
+	top: 21%
+	color: #BFC7D4
+	cursor: pointer
+	&:hover
+		color: #566378
+
+.btn
+	border: 0 none
+	border-radius: 6px
+	padding: 0 12px
+	height: 40px
+	font-size: 14px
+	display: flex
+	align-items: center
+	justify-content: center
+	text-decoration: none
+	font-weight: 500
+	color: #1b2b42
+	background-color: #ebeff1
+	outline: none
+	+hand
+
+	&:hover
+		background-color: #e4eaee
+
+	&.green-gradient
+		background: linear-gradient(-45deg, #32dba8, #34e66f)
+		color: white
+
+		box-shadow: 0 2px 4px rgba(10, 67, 141, 0.06), 0 1px 2px rgba(10, 67, 141,0.12)
+		$transitionProps: 0.3s cubic-bezier(.25, .8, .25, 1)
+		transition: background $transitionProps, box-shadow $transitionProps
+
+		&:hover
+			background: linear-gradient(-45deg,#32dba8,lighten(#34e66f, 5%))
+			box-shadow: 0 4px 12px rgba(10, 67, 141,0.10), 0 3px 5px rgba(10, 67, 141,0.06)
+
+	&.purple-gradient
+		background: linear-gradient(-45deg, #b696f6, #6556e3)
+		color: white
+
+		box-shadow: 0 2px 4px rgba(10, 67, 141, 0.06), 0 1px 2px rgba(10, 67, 141,0.12)
+		$transitionProps: 0.3s cubic-bezier(.25, .8, .25, 1)
+		transition: background $transitionProps, box-shadow $transitionProps
+
+		&:hover
+			background: linear-gradient(-45deg,#b696f6,lighten(#6556e3, 5%))
+			box-shadow: 0 4px 12px rgba(10, 67, 141,0.10), 0 3px 5px rgba(10, 67, 141,0.06)
+
+	&.blue-gradient
+		background: linear-gradient(-45deg, #0288dd, #0464c0)
+		color: white
+
+		box-shadow: 0 2px 4px rgba(10, 67, 141, 0.06), 0 1px 2px rgba(10, 67, 141, 0.12)
+		transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)
+
+		&:hover
+			background: linear-gradient(-45deg, lighten(#0288dd, 5%), #0464c0)
+			box-shadow: 0 4px 12px rgba(10, 67, 141, 0.10), 0 3px 5px rgba(10, 67, 141, 0.06)
+
+	&.red-gradient
+		background: linear-gradient(-45deg, #fca1bd, #d62259)
+		color: white
+
+		box-shadow: 0 2px 4px rgba(10, 67, 141, 0.06), 0 1px 2px rgba(10, 67, 141, 0.12)
+		transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)
+
+		&:hover
+			background: linear-gradient(-45deg, lighten(#fca1bd, 5%), #d62259)
+			box-shadow: 0 4px 12px rgba(10, 67, 141, 0.10), 0 3px 5px rgba(10, 67, 141, 0.06)
+
+	&.black
+		color: white
+		background-color: #121038
+		&:hover
+			background-color: #000000
+	&.dark-blue
+		color: white
+		background-color: #292682
+		&:hover
+			background-color: #1F1D63
+	&.round
+		border-radius: 24px !important
+		padding: 0 16px
+
+	&.green
+		background-color: $oraGreen
+		color: white
+
+		&:hover
+			background-color: darken($oraGreen, 5%)
+
+		&:disabled
+			background: lighten($oraGreen, 5%)
+
+			&:hover
+				background: lighten($oraGreen, 5%)
+
+	&.green-transparent
+		background-color: white
+		color: $oraGreen
+		border: 2px solid $oraGreen
+
+	&.purple
+		background-color: #7286e9
+		color: #fff
+
+	&.blue
+		background-color: #2E3191
+		color: #fff
+		&:hover
+			background-color: darken(#2E3191, 5%)
+
+	&.white
+		background-color: white
+		&:hover
+			background-color: darken(white, 5%)
+
+	&.huge
+		height: auto
+		padding: 11px 30px
+		font-size: 18px
+	&.big
+		height: auto
+		padding: 8px 20px
+		font-size: 17px
+		font-weight: 500
+
+	&.fix
+		border: 1px solid transparent
+
+.mediumImage
+	width: 200px
+	display: block
+	margin-left: auto
+	margin-right: auto
+
+.relative
+	position: relative
+
+.pretty-text
+	color: #8c7996
+	font-size: 19px
+	max-width: 783px
+
+ol.packed
+	max-width: 500px
+	margin: 0 auto
+	text-align: left
+
+ol
+	color: #473a4f
+	font-size: 16px
+	font-weight: 400
+
+a.redLink
+	color: #f27b71
+	transition: color 300ms ease-out
+
+	&:hover
+		color: #f8bcb7
+
+.green-text
+	color: $oraGreen
+
+b.semi
+	font-weight: 500
+
+.separator
+	border-bottom: 1px solid $border
+	width: 80%
+	+ma
+
+.bgWhite
+	background-color: white
+
+.smallText
+	font-size: 14px
+
+.mr1px
+	margin-right: 1px
+
+@media screen and (max-width: 589px)
+	.btn.big
+		font-size: 14px
+		padding: 4px 12px
+	.loading
+		// height: calc(100vh - 95px)
+
+		&:empty
+			display: none
+
+@media screen and (max-width: 414px)
+	h1
+		font-size: 26px
+
+	h2
+		font-size: 18px
+
+=defaultShadow()
+	// box-shadow:0 0 1px 1px rgba(0,0,0,0.03), 0px 4px 16px rgba(0,0,0,.175)
+	box-shadow: 0 0 3px 3px rgba(10,40,123,.02), 0 10px 56px rgba(10,40,123,.11)
+	// box-shadow: 0 1px 20px 3px rgba(0, 55, 130, 0.1)
+
+@media screen and (max-width:768px)
+	p
+		font-size: 14px!important
+
+.fullscreen
+	position: relative
+	z-index: 30
+
+// @import "./Navigation/index"
+@import "../components/Footer/index.sass"
+@import "../components/Home/index"
+@import "../components/Location/index"
+// @import "./Blog/index"
+@import "../components/ContactUs/ContactUs.sass"
+@import "../components/WhyUs/WhyUs.sass"
+@import "../components/Avocado/Avocado.sass"

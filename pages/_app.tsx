@@ -33,6 +33,8 @@ import {
   posthogId,
   posthogConfig
 } from 'lib/config'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
+import { EstimateFormContextProvider } from 'components/EstimateForm/EstimateFormContext'
 
 if (!isServer) {
   bootstrap()
@@ -67,5 +69,10 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return <>
+    <GoogleAnalytics trackPageViews />
+    <EstimateFormContextProvider>
+      <Component {...pageProps} />
+    </EstimateFormContextProvider>
+  </>
 }

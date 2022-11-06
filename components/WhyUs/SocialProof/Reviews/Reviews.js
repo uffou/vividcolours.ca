@@ -1,7 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useCallback, useState } from 'react'
-import SVG from '../../../utils/SVG'
 import { Dots } from '../../../Avocado/ImageShow/ImageShow'
+import LeftIcon from '../../../../public/left-big.svg'
+import RightIcon from '../../../../public/right-big.svg'
 
 const reviews = [
 	{
@@ -186,26 +187,26 @@ export default function Reviews() {
 	}, [setCurrentIndex, numberOfVisibleReviews])
 
 
-	return <div class="Reviews">
-		{showControls && <SVG class="prevImage pr" src={require('../../../Avocado/ImageShow/left-big.svg')} onClick={prev} />}
-		{visibleReviews.map((review, index) => <div key={index} class="review">
+	return <div className="Reviews">
+		{showControls && <LeftIcon className="prevImage pr" onClick={prev} />}
+		{visibleReviews.map((review, index) => <div key={index} className="review">
 			<div className="review-upper">
-				<img class="quotes" src={require('./img/quotes.png')} />
+				<img className="quotes" src={require('./img/quotes.png')} />
 				<h3>{review.title}</h3>
-				<p class="description">{review.description}</p>
+				<p className="description">{review.description}</p>
 
 			</div>
-			<div class="review-info">
-				<img src={review.avatar} class="avatar" />
-				<div class="names">
+			<div className="review-info">
+				<img src={review.avatar} className="avatar" />
+				<div className="names">
 					<div><img src={require('./img/stars.png')} /></div>
 					<a target="_blank" rel="noopener noreferrer" href={review.website}>{review.company}</a>
-					<p class="author">{review.author}</p>
-					<p class="occupation">{review.occupation}</p>
+					<p className="author">{review.author}</p>
+					<p className="occupation">{review.occupation}</p>
 				</div>
 			</div>
 		</div>)}
-		{showControls && <SVG class="nextImage pl" src={require('../../../Avocado/ImageShow/right-big.svg')} onClick={next} />}
+		{showControls && <RightIcon className="nextImage pl" onClick={next} />}
 		{showControls && <Dots currentIndex={currentPageIndex} length={reviews.length / numberOfVisibleReviews} setIndex={setPage} />}
 	</div>
 }

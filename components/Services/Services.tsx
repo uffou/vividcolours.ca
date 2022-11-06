@@ -1,15 +1,22 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-magic-numbers */
 /* eslint-disable react/jsx-handler-names */
-import React, { useState, useEffect, useMemo, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import AvocadoBox from '../Avocado/AvocadoBox'
-import SVG from '../utils/SVG'
 import AvocadoTabs from '../Avocado/AvocadoTabs'
-import { debounce } from 'lodash-es'
-import useIntersectionObserverRef from '../utils/useIntersectionObserverRef'
+
+import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
 import { useEstimateFormContext } from '../EstimateForm/EstimateFormContext'
-import { Helmet } from 'react-helmet'
-const elementResizeDetectorMaker = require('element-resize-detector')
+import { PageHead } from 'components/PageHead'
+
+import AgendaIcon from '../../public/agenda.svg'
+import GalleryIcon from '../../public/gallery-icon.svg'
+import InteriorIcon from '../../public/interior.svg'
+import ExteriorIcon from '../../public/exterior.svg'
+import CommercialIcon from '../../public/commercial.svg'
+import ColorIcon from '../../public/color.svg'
+import CabinetIcon from '../../public/cabinet-painting.svg'
+// const elementResizeDetectorMaker = require('element-resize-detector')
 
 const colors = {
 	h1: '#00a551',
@@ -19,7 +26,7 @@ const colors = {
 const options = {
 	interior: { id: 'interior',
 		title: 'Interior Painting',
-		image: <img class="mb2 rounded cover" src={require('./img/interior-painting.jpg')} />,
+		image: <img className="mb2 rounded cover" src="/interior-painting.jpg" />,
 		description: `Part of our interior services include painting your:
 		Walls and ceilings
 		Doors and Windows
@@ -34,11 +41,11 @@ const options = {
 
 		Adjusting to your schedule is never a challenge for us!
 		Friendly and reliable! We are Vivid Colours!`,
-		svg: require('./img/interior.svg') },
+		Icon: InteriorIcon },
 
 	exterior: { id: 'exterior',
 		title: 'Exterior Painting',
-		image: <img class="mb2 rounded cover short" src={require('./img/exterior-painting.jpg')} />,
+		image: <img className="mb2 rounded cover short" src="/exterior-painting.jpg" />,
 		description: `Part of our exterior services include painting your:
 		Siding (wood, vinyl, composite and aluminium)
 		Fascia and Eavestrough
@@ -51,14 +58,14 @@ const options = {
 		- Covering plants
 		- Filling small holes or cracks in the walls
 		- Power washing and sanding surfaces
-		- Caulking windows and doors	
+		- Caulking windows and doors
 
 		Adjusting to your schedule is never a challenge for us!
 		Friendly and reliable! We are Vivid Colours!`,
-		svg: require('./img/exterior.svg') },
+		Icon: ExteriorIcon },
 	commercial: { id: 'commercial',
 		title: 'Commercial Painting',
-		image: <img class="mb2 rounded cover" src={require('./img/commercial-painting.jpg')} />,
+		image: <img className="mb2 rounded cover" src="/commercial-painting.jpg" />,
 		description: `Vivid Colours offers full-service, professional commercial painting in Kitchener, Waterloo, Guelph, Cambridge and surrounding area.
 You can count on a professional execution in a timely manner without disruption of your business.
 
@@ -72,10 +79,10 @@ and more
 
 		Adjusting to your schedule is never a challenge for us!
 		Friendly and reliable! We are Vivid Colours!`,
-		svg: require('./img/commercial.svg') },
+		Icon: CommercialIcon },
 	cabinet: { id: 'cabinet',
 		title: 'Cabinet Painting',
-		image: <img class="mb2 rounded cover short" src={require('./img/cabinet-painting.jpg')} />,
+		image: <img className="mb2 rounded cover short" src="/cabinet-painting.jpg" />,
 		description: `Part of our cabinets painting and refinishing services include:
 		- Kitchen Cabinet Painting or Refinishing
 - Other cabinets, cupboards, bookcases and furniture
@@ -88,58 +95,44 @@ When cabinets are all painted and dry they are reinstalled in your home. Your ki
 Adjusting to your schedule is never a challenge for us!
 Friendly and reliable! We are Vivid Colours!
 		`,
-		svg: require('./img/cabinet-painting.svg') },
+		Icon: CabinetIcon },
 	color: { id: 'color',
 		title: 'Colour Consultation',
-		image: <img class="mb2 rounded cover" src={require('./img/colour-consultation.jpg')} />,
+		image: <img className="mb2 rounded cover" src="/colour-consultation.jpg" />,
 		description: 'We know that choosing the perfect colour can be a stressful and time consuming experience.  Let our experts help you when you book your free estimate with us.',
-		svg: require('./img/color.svg') },
+		Icon: ColorIcon },
 }
 
 const metaTitle = 'Services - Vivid Colours Painting'
 
 export default function Services({ intersectionObserver, elements, id }) {
 	const { show } = useEstimateFormContext()
-	const ref = intersectionObserver ? useIntersectionObserverRef(intersectionObserver, elements, id) : useRef()
+	const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
 	const [selected, setSelected] = useState('interior')
 
-	const [width, setWidth] = useState()
-
-	const setSize = useMemo(() => debounce((element) => {
-		setWidth(element.offsetWidth)
-	}, 50), [setWidth])
-
-	useEffect(() => {
-		const { current } = ref
-		const erd = elementResizeDetectorMaker()
-		erd.listenTo(current, setSize)
-
-		return () => {
-			erd.removeListener(current, setSize)
-		}
-	}, [setSize])
 
 	const descriptions = []
 	for (const i in options) {
-		descriptions.push(<div key={i} class={`description ${selected === i ? '' : 'hidden'}`}>
+		descriptions.push(<div key={i} className={`description ${selected === i ? '' : 'hidden'}`}>
 			{options[i].image ? options[i].image : null}
 			<div>
 				{options[i].description}
 			</div>
-			<div class="v mt2">
-				<div class="big green round btn" onClick={() => show('Services')}><SVG class="v mr" src={require('../Home/agenda.svg')} />
+			<div className="v mt2">
+				<div className="big green round btn" onClick={() => show('Services')}>
+					<AgendaIcon className="v mr" />
 					Book a free estimate today!</div>
-				<div class="grow" />
+				<div className="grow" />
 
 				{i === 'interior' && <a href="#gallery">
-					<div class="v big green-transparent round btn" style={{ height: '50px' }}>
-						<SVG class="mr" style={{ width: '22px', height: '22px' }} src={require('../Home/noun_gallery_image.svg')} />
+					<div className="v big green-transparent round btn" style={{ height: '50px' }}>
+						<GalleryIcon className="mr" style={{ width: '22px', height: '22px' }}  />
 						<span>Gallery</span>
 					</div>
 				</a>}
 				{i === 'exterior' && <a href="#exterior-gallery">
-					<div class="v big green-transparent round btn" style={{ height: '50px' }}>
-						<SVG class="mr" style={{ width: '22px', height: '22px' }} src={require('../Home/noun_gallery_image.svg')} />
+					<div className="v big green-transparent round btn" style={{ height: '50px' }}>
+						<GalleryIcon className="mr" style={{ width: '22px', height: '22px' }}  />
 						<span>Gallery</span>
 					</div>
 				</a>}
@@ -151,16 +144,12 @@ export default function Services({ intersectionObserver, elements, id }) {
 
 	return <div ref={ref} id="services">
 		{!intersectionObserver && <div style={{ height: 60 }} />}
-		{!intersectionObserver && <Helmet>
-			<title>{metaTitle}</title>
-			<meta name="twitter:title" content={metaTitle} />
-			<meta property="og:title" content={metaTitle} />
-		</Helmet>}
-		<AvocadoBox style={{ backgroundColor: colors.bg }} class="h Services" innerClass="">
+		{!intersectionObserver && <PageHead title={metaTitle} />}
+		<AvocadoBox style={{ backgroundColor: colors.bg }} className="h Services" innerClass="">
 			<h1 style={{ color: colors.h1 }}>What we do</h1>
 			<AvocadoTabs
-				horizontal={width > 900}
-				class="big"
+				horizontal={typeof window !== 'undefined' && window.innerWidth > 900}
+				className="big"
 				options={options}
 				selectedKey={selected}
 				selectedColor={colors.h1}
@@ -168,7 +157,6 @@ export default function Services({ intersectionObserver, elements, id }) {
 				selectedBg="#FFFFFF"
 				onSelect={setSelected}
 			/>
-
 			{descriptions}
 		</AvocadoBox>
 	</div>

@@ -4,11 +4,15 @@ export default function useIntersectionObserverRef(intersectionObserver, map, ex
 	const ref = useRef()
 	useEffect(() => {
 		const { current } = ref
-		intersectionObserver.observe(current)
-		map.set(current, extra)
+		if(intersectionObserver){
+			intersectionObserver.observe(current)
+			map.set(current, extra)
+		}
 		return () => {
-			intersectionObserver.unobserve(current)
-			map.delete(current)
+			if(intersectionObserver){
+				intersectionObserver.unobserve(current)
+				map.delete(current)
+			}
 		}
 	}, [intersectionObserver, map, extra])
 	return ref

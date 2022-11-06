@@ -2,9 +2,9 @@
 /* eslint-disable react/jsx-handler-names */
 import React from 'react'
 import AvocadoBox from '../../Avocado/AvocadoBox'
-import SVG from '../../utils/SVG'
 import Reviews from './Reviews/Reviews'
 import { useEstimateFormContext } from '../../EstimateForm/EstimateFormContext'
+import AgendaIcon from '../../../public/agenda.svg'
 
 const colors = {
 	h2: '#FFFFFF',
@@ -14,15 +14,15 @@ const colors = {
 export default function SocialProof() {
 	const { show } = useEstimateFormContext()
 
-	return <AvocadoBox id="testimonials" style={{ backgroundColor: colors.bg }} class="h v SocialProof" innerClass="">
+	return <AvocadoBox id="testimonials" style={{ backgroundColor: colors.bg }} className="h v SocialProof" innerClass="">
 		<h2 style={{ color: colors.h2 }}>What our customers are saying</h2>
 		<Reviews />
 		<h2 style={{ color: colors.h2 }}>Join our happy customers</h2>
-		<div class="v center-it mt2" onClick={() => show('Reviews')}>
-			<div style={{ color: colors.bg }} class="big white round btn"><SVG class="v mr" src={require('../../Home/agenda.svg')} />
+		<div className="v center-it mt2" onClick={() => show('Reviews')}>
+			<div style={{ color: colors.bg }} className="big white round btn"><AgendaIcon className="v mr" />
 				Book a free estimate today!
 			</div>
-			<div class="grow" />
+			<div className="grow" />
 		</div>
 	</AvocadoBox>
 }

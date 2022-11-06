@@ -1,11 +1,18 @@
 import React from 'react'
 import AvocadoBox from '../Avocado/AvocadoBox'
-import AgendaIcon from '../../public/agenda.svg'
 import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
 import { useEstimateFormContext } from '../EstimateForm/EstimateFormContext'
 import { Links } from '../Location'
-import { ResponsiveSVG } from '../utils/ResponsiveImage'
 import { PageHead } from 'components/PageHead'
+import Image from 'next/image'
+
+import AgendaIcon from '../../public/agenda.svg'
+import PhoneIcon from '../../public/phone.svg'
+import EmailIcon from '../../public/email.svg'
+import InstagramIcon from '../../public/insta.svg'
+import FacebookIcon from '../../public/fb.svg'
+import PinterestIcon from '../../public/pinterest.svg'
+
 
 const colors = {
 	h1: '#000000',
@@ -19,10 +26,10 @@ const metaTitle = 'Contact - Vivid Colours Painting'
 export default function ContactUs({ intersectionObserver, elements, id }) {
 	const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
 	const { show } = useEstimateFormContext()
-	return <AvocadoBox id="contact" style={{ backgroundColor: colors.bg, color: colors.h1 }} className="h" innerclassName="ContactUs" containerRef={ref}>
+	return <AvocadoBox id="contact" style={{ backgroundColor: colors.bg, color: colors.h1 }} className="h" innerClass="ContactUs" containerRef={ref}>
 		{!intersectionObserver && <div style={{ height: 60 }} />}
 		{!intersectionObserver && <PageHead title={metaTitle} />}
-		<ResponsiveSVG src={require('../img/team.svg')} width={865} height={386} />
+		<Image src="/team.svg" width={865} height={386} />
 		<h1 style={{ color: colors.h1 }}>Contact Us</h1>
 		<h2 style={{ color: colors.h1 }}>Kitchener Waterloo Painters</h2>
 		<p className="description">
@@ -52,7 +59,7 @@ export default function ContactUs({ intersectionObserver, elements, id }) {
 					Contact us by phone<br />
 					at <a href="tel:226-338-8495">226-338-8495</a>
 				</div>
-				<a href="tel:226-338-8495"><SVG className="mt2 v" src={require('../img/phone.svg')} /></a>
+				<a href="tel:226-338-8495"><PhoneIcon className="mt2 v" /></a>
 			</div>
 			<div className="box">
 				<div className="title">
@@ -62,7 +69,7 @@ export default function ContactUs({ intersectionObserver, elements, id }) {
 					Contact us by email at<br />
 					<a href="mailto:office@vividcolours.ca">office@vividcolours.ca</a>
 				</div>
-				<a href="mailto:office@vividcolours.ca"><SVG className="mt2 v" src={require('../img/email.svg')} /></a>
+				<a href="mailto:office@vividcolours.ca"><EmailIcon className="mt2 v" /></a>
 			</div>
 		</div>
 
@@ -72,13 +79,13 @@ export default function ContactUs({ intersectionObserver, elements, id }) {
 		</h2>
 		<div className="v">
 			<a rel="noopener noreferrer" target="_blank" href="https://www.pinterest.ca/vividcolourspainting/">
-				<SVG className="ml v mr hand" src={require('../img/pinterest.svg')} />
+				<PinterestIcon className="ml v mr hand" />
 			</a>
 			<a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/vividcolourspainting">
-				<SVG className="ml v mr hand" src={require('../img/fb.svg')} />
+				<FacebookIcon className="ml v mr hand"  />
 			</a>
 			<a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/vividcolourspainting/">
-				<SVG className="ml v mr hand" src={require('../img/insta.svg')} />
+				<InstagramIcon className="ml v mr hand" />
 			</a>
 
 		</div>

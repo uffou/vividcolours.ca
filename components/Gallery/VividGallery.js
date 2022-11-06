@@ -3,9 +3,8 @@ import React, { useState, useCallback } from 'react'
 import Gallery from 'react-photo-gallery'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import { exteriorPhotos, photos, smallExteriorPhotos, smallPhotos } from './photos'
-import { event } from 'react-ga'
-import useIntersectionObserverRef from '../utils/useIntersectionObserverRef'
-import { Helmet } from 'react-helmet'
+import { event } from "nextjs-google-analytics"
+import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
 import { PageHead } from 'components/PageHead'
 
 const metaTitle = 'Gallery - Vivid Colours Painting'
@@ -79,11 +78,7 @@ export const VividGalleryExterior = ({ intersectionObserver, elements, id }) => 
 	return (
 		<div ref={ref} id="exterior-gallery" style={{ paddingTop: '16px' }}>
 			{!intersectionObserver && <div style={{ height: 60 }} />}
-			{!intersectionObserver && <Helmet>
-				<title>{metaTitle}</title>
-				<meta name="twitter:title" content={metaTitle} />
-				<meta property="og:title" content={metaTitle} />
-			</Helmet>}
+			{!intersectionObserver && <PageHead title={metaTitle} />}
 			<Gallery margin={0.5} photos={smallExteriorPhotos} targetRowHeight={180} onClick={openLightbox} />
 			<ModalGateway>
 				{viewerIsOpen ? (

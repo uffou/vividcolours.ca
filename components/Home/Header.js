@@ -3,10 +3,10 @@
 
 import React from 'react'
 import AvocadoBox from '../Avocado/AvocadoBox'
-import { ResponsiveIMG } from '../utils/ResponsiveImage'
-import SVG from '../utils/SVG'
-import useIntersectionObserverRef from '../utils/useIntersectionObserverRef'
+import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
 import { useEstimateFormContext } from '../EstimateForm/EstimateFormContext'
+import Image from 'next/image'
+import AgendaIcon from '../../public/agenda.svg'
 
 const colors = {
 	h1: '#2E3191',
@@ -26,7 +26,7 @@ export default function Header({ intersectionObserver, elements, id }) {
 					<div className="header-form">
 						<h2 style={{ color: colors.h2 }}>Everything from residential to commercial, interior and exterior painting and colour consultation.</h2>
 						<div className="v mt2 mb2" onClick={() => show('Header')}>
-							<div className="big green round btn"><SVG className="v mr" src={require('./agenda.svg')} />
+							<div className="big green round btn"><AgendaIcon className="v mr" />
 								Book a free estimate today!</div>
 							<div className="grow" />
 						</div>
@@ -35,7 +35,7 @@ export default function Header({ intersectionObserver, elements, id }) {
 						</div>
 					</div>
 				</div>
-				<ResponsiveIMG src={require('./house.png')} width={905} height={568} />
+				<Image src="/house.png" width={905} height={568} />
 				{/* <MouseScrollAnimation text="This is BIG, are you ready?" /> */}
 			</AvocadoBox>
 		</div>

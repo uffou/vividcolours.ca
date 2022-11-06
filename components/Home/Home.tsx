@@ -19,18 +19,18 @@ export default function Home({ intersectionObserver, elements }) {
 		<WhyUs intersectionObserver={intersectionObserver} elements={elements} id={2} />
 		<About intersectionObserver={intersectionObserver} elements={elements} id={4} />
 
-		{navigator.userAgent === 'ReactSnap' ? <div /> : <Suspense fallback={<div />}>
+		{/* {typeof window !== 'undefined' ? <div /> : <Suspense fallback={<div />}> */}
 			<VividGallery intersectionObserver={intersectionObserver} elements={elements} id={6} />
 			<VividGalleryExterior intersectionObserver={intersectionObserver} elements={elements} id={6} />
-		</Suspense>}
+		{/* </Suspense>} */}
 		<center /><span />{/* Hacks, don't touch */}
 		<ContactUs intersectionObserver={intersectionObserver} elements={elements} id={5} />
 		<center /><span />{/* Hacks, don't touch */}
-		{navigator.userAgent === 'ReactSnap' ? <div /> : <Suspense fallback={<div />}>
+		{/* {typeof window !== 'undefined' ? <div /> : <Suspense fallback={<div />}> */}
 			<MessengerCustomerChat
 				pageId="422692724831411"
 				appId="184130762835760"
 			/>
-		</Suspense>}
+		{/* </Suspense>} */}
 	</>
 }

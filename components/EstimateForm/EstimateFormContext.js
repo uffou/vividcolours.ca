@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useCallback } from 'react'
-import { event } from 'react-ga'
+import { event } from 'nextjs-google-analytics'
 
 const Context = createContext()
 
