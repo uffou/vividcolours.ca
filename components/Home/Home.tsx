@@ -21,9 +21,7 @@ export default function Home({ intersectionObserver, elements }) {
 			{/* <VividGallery intersectionObserver={intersectionObserver} elements={elements} id={6} />
 			<VividGalleryExterior intersectionObserver={intersectionObserver} elements={elements} id={6} /> */}
 		{/* </Suspense>} */}
-		<center /><span />{/* Hacks, don't touch */}
-		{/* <ContactUs intersectionObserver={intersectionObserver} elements={elements} id={5} /> */}
-		<center /><span />{/* Hacks, don't touch */}
+		
 		{/* {typeof window !== 'undefined' ? <div /> : <Suspense fallback={<div />}> */}
 			<MessengerCustomerChat
 				pageId="422692724831411"

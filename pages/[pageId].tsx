@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 
 export default function NotionDomainDynamicPage(props) {
   return <>
-  <NotionPageHeader />
+  <NotionPageHeader block={undefined} currentSection={0} />
   <NotionPage {...props} />
   </>
 }

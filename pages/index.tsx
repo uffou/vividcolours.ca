@@ -37,7 +37,7 @@ export default function NotionDomainPage(props) {
 						lastRatio[id] = entry.intersectionRatio
 					}
 
-					const [[mostIntersecting]] = Object.entries(lastRatio).sort((a, b) => b[1] - a[1])
+					const [[mostIntersecting]] = Object.entries(lastRatio).sort((a, b) => Number(b[1]) - Number(a[1]))
 					if (lastRatio[mostIntersecting] > 0.2) {
 						setCurrentSection(parseInt(mostIntersecting, 10))
 					}
@@ -54,7 +54,7 @@ export default function NotionDomainPage(props) {
 	}, [observer.current])
 
   return <>
-    <NotionPageHeader currentSection={currentSection}/>
+    <NotionPageHeader currentSection={currentSection} block={undefined}/>
     <Home intersectionObserver={observer.current} elements={elements} />
     <NotionPage {...props} />
     {isShown ? <EstimateForm /> : null}

@@ -101,7 +101,7 @@ export default function Services({ intersectionObserver, elements, id }) {
 	return <div id="services">
 		{!intersectionObserver && <div style={{ height: 60 }} />}
 		{!intersectionObserver && <PageHead title={metaTitle} />}
-		<AvocadoBox style={{ backgroundColor: colors.bg }} className="h Services" innerClass="">
+		<AvocadoBox containerRef={undefined} style={{ backgroundColor: colors.bg }} className="h Services" innerClassName="">
 			<h1 style={{ color: colors.h1 }}>What we do</h1>
 			<h2 style={{ width: 434, color: colors.h2 }}>Mostly we make you happy. Here are our services.</h2>
 
