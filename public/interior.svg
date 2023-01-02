@@ -1,9 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <g id="Layer_1" data-name="Layer 1">
-    <g>
-      <polygon points="17.29 13.93 17.29 8.25 25.72 12.17 25.72 17.97 17.29 13.93" style="fill: currentColor"/>
-      <polygon points="7.54 12.17 15.96 8.25 15.96 13.93 7.54 17.97 7.54 12.17" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round;stroke-width: 0.725228542338439px"/>
-      <path d="M25.31,19.74l-8.62,4-8.61-4,8.61-4Z" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round;stroke-width: 0.725228542338439px"/>
-    </g>
-  </g>
+<svg width="137" height="134" viewBox="0 0 137 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M73.6959 49.512V1L136.649 34.1924V83.5555L73.6959 49.512Z" fill="#010101"/>
+<path d="M1 34.1924L63.9531 1V49.512L1 83.5555V34.1924Z" stroke="#010101" stroke-width="0.7252" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M133.651 98.8749L69.1991 132.918L4.74719 98.8749L69.1991 64.8314L133.651 98.8749Z" stroke="#010101" stroke-width="0.7252" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

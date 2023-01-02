@@ -1,14 +1,15 @@
 .Services
-	background-image: url("/painter.png")
+	// background-image: url("/painter.png")
 	background-size: 800px
 	background-repeat: no-repeat
 	background-position: 100% 50%
+
 	.description
 		white-space: pre-line
-		background: white
-		padding: 24px !important
-		border-radius: 12px
 		max-width: 500px
+		font-weight: 500
+		color: #000000
+		flex: 1
 		&.hidden
 			display: none
 		.cover
@@ -21,7 +22,67 @@
 	.Services
 		background-size: 250px
 		background-position: 135% 32%
+
 		.description
 			.cover
 				width: 340px
 				height: 250px
+
+.grid-container-8
+	height: 1080px
+	display: grid
+	grid-template-columns: repeat(10, 1fr)
+	grid-template-rows: repeat(2, 1fr) // two rows with equal height
+	grid-gap: 24px // optional gap between grid items
+	.grid-item
+		background: #F4F3F6
+		border-radius: 13px
+		min-height: 200px
+		overflow: hidden
+		display: flex
+		flex-direction: column
+		h2	
+			margin-top: 0
+			font-weight: 900 !important
+			font-size: 22px !important
+		> div
+			background-repeat: no-repeat
+			background-size: cover
+			flex: 1
+			display: flex
+			flex-direction: column
+			> .p4
+				display: flex
+				flex-direction: column
+				flex: 1
+
+	.grid-item-1,.grid-item-2
+		grid-column: span 5
+		svg
+			padding: 16px
+			width: 96px
+			height: 96px
+			margin-bottom: 16px
+	.grid-item-3, .grid-item-5
+		grid-column: span 3
+		h2
+			margin-left: 16px
+		svg
+			width: 48px
+			height: 48px
+			min-width: 48px
+	.grid-item-4
+		grid-column: span 4
+		h2
+			margin-left: 16px
+		svg
+			width: 48px
+			height: 48px
+			min-width: 48px
+
+.wide4
+	grid-column: span 4
+.wide3
+	grid-column: span 3
+.wide2
+	grid-column: span 2

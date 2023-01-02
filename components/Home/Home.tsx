@@ -17,14 +17,14 @@ export default function Home({ intersectionObserver, elements }) {
 		<Header intersectionObserver={intersectionObserver} elements={elements} id={0} />
 		<Services intersectionObserver={intersectionObserver} elements={elements} id={3} />
 		<WhyUs intersectionObserver={intersectionObserver} elements={elements} id={2} />
-		<About intersectionObserver={intersectionObserver} elements={elements} id={4} />
+		{/* <About intersectionObserver={intersectionObserver} elements={elements} id={4} /> */}
 
 		{/* {typeof window !== 'undefined' ? <div /> : <Suspense fallback={<div />}> */}
-			<VividGallery intersectionObserver={intersectionObserver} elements={elements} id={6} />
-			<VividGalleryExterior intersectionObserver={intersectionObserver} elements={elements} id={6} />
+			{/* <VividGallery intersectionObserver={intersectionObserver} elements={elements} id={6} />
+			<VividGalleryExterior intersectionObserver={intersectionObserver} elements={elements} id={6} /> */}
 		{/* </Suspense>} */}
 		<center /><span />{/* Hacks, don't touch */}
-		<ContactUs intersectionObserver={intersectionObserver} elements={elements} id={5} />
+		{/* <ContactUs intersectionObserver={intersectionObserver} elements={elements} id={5} /> */}
 		<center /><span />{/* Hacks, don't touch */}
 		{/* {typeof window !== 'undefined' ? <div /> : <Suspense fallback={<div />}> */}
 			<MessengerCustomerChat

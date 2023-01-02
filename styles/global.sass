@@ -35,7 +35,7 @@ body
 	width: 1.2em !important
 
 
-	@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900")
+	@import url("https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900")
 
 *, :after, :before
 	box-sizing: border-box
@@ -52,9 +52,9 @@ body
 	margin: 0
 	font-size: 14px
 	line-height: 1.42857143
-	font-family: 'Roboto', 'Helvetica Neue', Arial
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
+	font-family: 'Inter', 'Helvetica Neue', Arial
+	// -webkit-font-smoothing: antialiased
+	// -moz-osx-font-smoothing: grayscale
 
 h1, h2, h3
 	margin-top: 20px
@@ -148,10 +148,19 @@ h1.bigger
 	box-shadow: 0 60px 60px -20px rgba(25,45,100,.15)
 	// box-shadow: 0 7px 26px 1px rgba(25, 57, 145, 0.05), 0 11px 38px rgba(17, 70, 138, 0.08)
 
+.fullwidth
+	max-width: 100%
+
 .bigImage
 	max-width: 100%
 	display: block
 
+.relative
+	position: relative
+.br12
+	border-radius: 12px
+.overflow-hidden
+	overflow: hidden
 .centered
 	text-align: center
 
@@ -176,20 +185,27 @@ h1.bigger
 		color: #566378
 
 .btn
+	width: max-content
 	border: 0 none
-	border-radius: 6px
-	padding: 0 12px
+	border-radius: 12px
+	padding: 0 16px
 	height: 40px
 	font-size: 14px
+	font-weight: 700
 	display: flex
 	align-items: center
 	justify-content: center
 	text-decoration: none
-	font-weight: 500
 	color: #1b2b42
 	background-color: #ebeff1
 	outline: none
 	+hand
+
+	&.small
+		height: 32px
+		font-weight: 500
+		font-size: 12px
+		border-radius: 9px
 
 	&:hover
 		background-color: #e4eaee
@@ -245,6 +261,11 @@ h1.bigger
 		background-color: #121038
 		&:hover
 			background-color: #000000
+	&.orange
+		color: white
+		background-color: #FF5D00
+		&:hover
+			background-color: #EB5600
 	&.dark-blue
 		color: white
 		background-color: #292682
