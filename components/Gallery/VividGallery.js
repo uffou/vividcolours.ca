@@ -4,13 +4,14 @@ import Gallery from 'react-photo-gallery'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import { exteriorPhotos, photos, smallExteriorPhotos, smallPhotos } from './photos'
 import { event } from "nextjs-google-analytics"
-import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
+// import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
 import { PageHead } from 'components/PageHead'
 
 const metaTitle = 'Gallery - Vivid Colours Painting'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const VividGallery = ({ intersectionObserver, elements, id }) => {
-	const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
+	// const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
 
 	const [currentImage, setCurrentImage] = useState(0)
 	const [viewerIsOpen, setViewerIsOpen] = useState(false)
@@ -31,7 +32,7 @@ const VividGallery = ({ intersectionObserver, elements, id }) => {
 	}
 
 	return (
-		<div ref={ref} id="gallery">
+		<div id="gallery">
 			{!intersectionObserver && <div style={{ height: 60 }} />}
 			{!intersectionObserver && <PageHead title={metaTitle} />}
 			<Gallery margin={0.5} photos={smallPhotos} targetRowHeight={180} onClick={openLightbox} />
@@ -53,9 +54,9 @@ const VividGallery = ({ intersectionObserver, elements, id }) => {
 	)
 }
 
-// eslint-disable-next-line react/no-multi-comp
+// eslint-disable-next-line react/no-multi-comp, @typescript-eslint/no-unused-vars
 export const VividGalleryExterior = ({ intersectionObserver, elements, id }) => {
-	const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
+	// const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
 
 	const [currentImage, setCurrentImage] = useState(0)
 	const [viewerIsOpen, setViewerIsOpen] = useState(false)
@@ -76,7 +77,7 @@ export const VividGalleryExterior = ({ intersectionObserver, elements, id }) => 
 	}
 
 	return (
-		<div ref={ref} id="exterior-gallery" style={{ paddingTop: '16px' }}>
+		<div id="exterior-gallery" style={{ paddingTop: '16px' }}>
 			{!intersectionObserver && <div style={{ height: 60 }} />}
 			{!intersectionObserver && <PageHead title={metaTitle} />}
 			<Gallery margin={0.5} photos={smallExteriorPhotos} targetRowHeight={180} onClick={openLightbox} />

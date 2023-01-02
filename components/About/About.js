@@ -1,7 +1,7 @@
 import React from 'react'
 import AvocadoBox from '../Avocado/AvocadoBox'
 import AgendaIcon from '../../public/agenda.svg'
-import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
+// import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
 import { useEstimateFormContext } from '../EstimateForm/EstimateFormContext'
 import { PageHead } from 'components/PageHead'
 
@@ -23,10 +23,11 @@ Friendly and reliable! We are Vivid Colours! `
 
 const metaTitle = 'About - Vivid Colours Painting'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function About({ intersectionObserver, elements, id }) {
-	const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
+	// const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
 	const { show } = useEstimateFormContext()
-	return <AvocadoBox id="about" style={{ backgroundColor: colors.bg, color: colors.h1 }} className="h" innerclassName="About smallScreenPadded" containerRef={ref}>
+	return <AvocadoBox id="about" style={{ backgroundColor: colors.bg, color: colors.h1 }} className="h" innerclassName="About smallScreenPadded" >
 		{!intersectionObserver && <div style={{ height: 60 }} />}
 		{!intersectionObserver && <PageHead title={metaTitle} />}
 		<h1 style={{ color: colors.h1 }}>About</h1>

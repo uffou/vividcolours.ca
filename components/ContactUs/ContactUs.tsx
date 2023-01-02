@@ -1,6 +1,6 @@
 import React from 'react'
 import AvocadoBox from '../Avocado/AvocadoBox'
-import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
+// import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
 import { useEstimateFormContext } from '../EstimateForm/EstimateFormContext'
 import { Links } from '../Location'
 import { PageHead } from 'components/PageHead'
@@ -23,13 +23,14 @@ const colors = {
 const metaTitle = 'Contact - Vivid Colours Painting'
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function ContactUs({ intersectionObserver, elements, id }) {
-	const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
+	// const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
 	const { show } = useEstimateFormContext()
-	return <AvocadoBox id="contact" style={{ backgroundColor: colors.bg, color: colors.h1 }} className="h" innerClass="ContactUs" containerRef={ref}>
+	return <AvocadoBox id="contact" style={{ backgroundColor: colors.bg, color: colors.h1 }} className="h" innerClassName="ContactUs" containerRef={undefined} >
 		{!intersectionObserver && <div style={{ height: 60 }} />}
 		{!intersectionObserver && <PageHead title={metaTitle} />}
-		<Image src="/team.svg" width={865} height={386} />
+		<Image src="/team.svg" alt="team" width={865} height={386} />
 		<h1 style={{ color: colors.h1 }}>Contact Us</h1>
 		<h2 style={{ color: colors.h1 }}>Kitchener Waterloo Painters</h2>
 		<p className="description">

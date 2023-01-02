@@ -1,12 +1,8 @@
 import React from 'react'
 import AvocadoBox from '../Avocado/AvocadoBox'
-import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
-import { useEstimateFormContext } from '../EstimateForm/EstimateFormContext'
-import SocialProof from './SocialProof/SocialProof'
+// import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
+// import { useEstimateFormContext } from '../EstimateForm/EstimateFormContext'
 import { PageHead } from 'components/PageHead'
-import Image from 'next/image'
-
-import AgendaIcon from '../../public/agenda.svg'
 import Reviews from './SocialProof/Reviews/Reviews'
 
 const colors = {
@@ -18,10 +14,11 @@ const colors = {
 
 const metaTitle = 'Why Us - Vivid Colours Painting'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function WhyUs({ intersectionObserver, elements, id, location }) {
-	const ref = intersectionObserver ? useIntersectionObserverRef(intersectionObserver, elements, id) : void 0
-	const { show } = useEstimateFormContext()
-	return <AvocadoBox id="why" style={{ background: colors.bg, color: colors.h1 }} class="h" innerClass="WhyUs" containerRef={ref}>
+	// const ref = intersectionObserver ? useIntersectionObserverRef(intersectionObserver, elements, id) : void 0
+	// const { show } = useEstimateFormContext()
+	return <AvocadoBox id="why" style={{ background: colors.bg, color: colors.h1 }} class="h" innerClass="WhyUs">
 		{!intersectionObserver && <div style={{ height: 60 }} />}
 		{!intersectionObserver && <PageHead title={metaTitle} />}
 		<div className='centered center-it'>

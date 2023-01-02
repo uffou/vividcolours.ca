@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-magic-numbers */
 /* eslint-disable react/jsx-handler-names */
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import AvocadoBox from '../Avocado/AvocadoBox'
-import AvocadoTabs from '../Avocado/AvocadoTabs'
+// import AvocadoTabs from '../Avocado/AvocadoTabs'
 
-import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
+// import useIntersectionObserverRef from '../../utils/useIntersectionObserverRef'
 import { useEstimateFormContext } from '../EstimateForm/EstimateFormContext'
 import { PageHead } from 'components/PageHead'
 
@@ -91,13 +91,14 @@ and more`,
 
 const metaTitle = 'Services - Vivid Colours Painting'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function Services({ intersectionObserver, elements, id }) {
 	const { show } = useEstimateFormContext()
-	const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
+	// const ref = intersectionObserver && useIntersectionObserverRef(intersectionObserver, elements, id)
 	
 
 
-	return <div ref={ref} id="services">
+	return <div id="services">
 		{!intersectionObserver && <div style={{ height: 60 }} />}
 		{!intersectionObserver && <PageHead title={metaTitle} />}
 		<AvocadoBox style={{ backgroundColor: colors.bg }} className="h Services" innerClass="">

@@ -1,7 +1,8 @@
 import * as React from 'react'
 import cs from 'classnames'
-import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
-import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
+// import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
+// import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Header, Breadcrumbs, Search, useNotionContext } from 'react-notion-x'
 import * as types from 'notion-types'
 
@@ -12,32 +13,33 @@ import styles from './styles.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const ToggleThemeButton = () => {
-  const [hasMounted, setHasMounted] = React.useState(false)
-  const isDarkMode = false
+// const ToggleThemeButton = () => {
+//   const [hasMounted, setHasMounted] = React.useState(false)
+//   const isDarkMode = false
 
-  React.useEffect(() => {
-    setHasMounted(true)
-  }, [])
+//   React.useEffect(() => {
+//     setHasMounted(true)
+//   }, [])
 
-  // const onToggleTheme = React.useCallback(() => {
-  //   toggleDarkMode()
-  // }, [toggleDarkMode])
+//   // const onToggleTheme = React.useCallback(() => {
+//   //   toggleDarkMode()
+//   // }, [toggleDarkMode])
 
-  return (
-    <div
-      className={cs('breadcrumb', 'button', !hasMounted && styles.hidden)}
-      // onClick={onToggleTheme}
-    >
-      {/* {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />} */}
-      <IoSunnyOutline />
-    </div>
-  )
-}
+//   return (
+//     <div
+//       className={cs('breadcrumb', 'button', !hasMounted && styles.hidden)}
+//       // onClick={onToggleTheme}
+//     >
+//       {/* {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />} */}
+//       <IoSunnyOutline />
+//     </div>
+//   )
+// }
 
 export const NotionPageHeader: React.FC<{
   block: types.CollectionViewPageBlock | types.PageBlock
   currentSection: number
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 }> = ({ block, currentSection }) => {
   const { components, mapPageUrl } = useNotionContext()
 
@@ -98,7 +100,7 @@ export const NotionPageHeader: React.FC<{
         <div className='notion-nav-header-rhs breadcrumbs'>
 
           {isSearchEnabled && <Search block={block} title={null} />}
-          
+
           <a href="tel:226-338-8495">Call us 226-338-8495</a>
           <div className="ml2 btn black">
             Book Free Estimate

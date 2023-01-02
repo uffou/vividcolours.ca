@@ -1,16 +1,14 @@
 /* eslint-disable react/jsx-handler-names */
 
-import React, { Suspense, lazy } from 'react'
+import React, { lazy } from 'react'
 import Header from './Header'
 import Services from '../Services'
-import About from '../About/About'
-import ContactUs from '../ContactUs/ContactUs'
 import WhyUs from '../WhyUs/WhyUs'
-import { VividGalleryExterior } from '../Gallery/VividGallery'
+// import { VividGalleryExterior } from '../Gallery/VividGallery'
 
 const MessengerCustomerChat = lazy(() => import('react-messenger-customer-chat'))
 
-const VividGallery = lazy(() => import('../Gallery'))
+// const VividGallery = lazy(() => import('../Gallery'))
 
 export default function Home({ intersectionObserver, elements }) {
 	return <>
